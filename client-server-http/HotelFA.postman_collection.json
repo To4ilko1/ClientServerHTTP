@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "3c0763ef-0230-4fbc-bd94-98ed49ba44d3",
+		"name": "HotelFA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authorization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Login",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/authorization",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"authorization"
+					]
+				},
+				"description": "Функция авторизации пользователя. Возвращает токен авторизованного пользователя.\r\n\r\n```json\r\n{ \"Status\": \"Success\",\r\n  \"Content\": {\r\n\t\t\"Token\": \"koWPxXAiOiJKV1NrB\",\r\n\t\t\"DateOfIssueToken\":\"2018-04-04T14:44:56.907Z\"\r\n  }\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "read_animals",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "SxZMx3k0oYuNRXMj",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/read_animals?=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"read_animals"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				},
+				"description": "Функция для просмотра своих животных. Возращает список объектов Animal.\r\n```json\r\n{\r\n    \"status\": \"success\",\r\n    \"content\":\r\n    [{\r\n        \"_id\":{\"$numberInt\":\"1\"},\r\n        \"Name\":\"Bessi\",\r\n        \"AnimalTypes\":\r\n        {\r\n            \"_id\":{\"$numberInt\":\"1\"},\r\n            \"NameIfType\":\"Кошка\",\r\n            \"DelTime\":null\r\n        },\r\n        \"Sex\":\"1\",\r\n        \"Comment\":\"nice\",\r\n        \"Birthday\":\"2015-01-01\",\r\n        \"ClientID\":{\"$numberInt\":\"1\"},\r\n        \"DelTime\":null\r\n    }]\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "read_reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/read_reviews",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"read_reviews"
+					]
+				},
+				"description": "Функция для получения всех отзывов. Возвращает список объектов Review.\r\n```json\r\n{\r\n    \"status\": \"success\",\r\n    \"content\"\r\n    [{\r\n        \"_id\":{\"$numberInt\":\"1\"},\r\n        \"Name\":\"Bessi\",\r\n        \"AnimalTypes\":\r\n        {\r\n            \"_id\":{\"$numberInt\":\"1\"},\r\n            \"NameIfType\":\"Кошка\",\r\n            \"DelTime\":null\r\n        },\r\n        \"Sex\":\"1\",\r\n        \"Comment\":\"nice\",\r\n        \"Birthday\":\"2015-01-01\",\r\n        \"ClientID\":{\"$numberInt\":\"1\"},\r\n        \"DelTime\":null\r\n    }]\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "read_animals_in_hotel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "YmL20qmlEOvrJjRD",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/read_animals_in_hotel?Token=YmL20qmlEOvrJjRD",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"read_animals_in_hotel"
+					],
+					"query": [
+						{
+							"key": "Token",
+							"value": "YmL20qmlEOvrJjRD"
+						}
+					]
+				},
+				"description": "Функция просмотра животных, находящихся в отеле. Возвращает список объектов Animal.\r\n```json\r\n{\r\n    \"status\": \"success\",\r\n    \"content\":\r\n    [{\r\n        \"_id\":{\"$numberInt\":\"1\"},\r\n        \"Name\":\"Bessi\",\r\n        \"AnimalTypes\":\r\n        {\r\n            \"_id\":{\"$numberInt\":\"1\"},\r\n            \"NameIfType\":\"Кошка\",\r\n            \"DelTime\":null\r\n        },\r\n        \"Sex\":\"1\",\r\n        \"Comment\":\"nice\",\r\n        \"Birthday\":\"2015-01-01\",\r\n        \"ClientID\":{\"$numberInt\":\"1\"},\r\n        \"DelTime\":null\r\n    }]\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "read_journals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/read_journals",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"read_journals"
+					]
+				},
+				"description": "Функция для получения всех записей журнала. Возвращает список объектов Journal.\r\n\r\n```json\r\n{\r\n    \"status\": \"success\",\r\n    \"content\":\r\n    [{\r\n        \"_id\":{\"$numberInt\":\"1\"},\r\n        \"Date\":\"2020-10-03T16:54:42.357+00:00\",\r\n        \"TimeStart\":\"2020-10-03T16:54:42.357+00:00\",\r\n        \"TimeEnd\":\"2020-10-03T16:54:42.357+00:00\",\r\n        \"OrderID\":{\"$numberInt\":\"1\"},\r\n        \"AnimalID\":{\"$numberInt\":\"1\"},\r\n        \"WorkerID\":{\"$numberInt\":\"1\"},\r\n        \"Task\":\"Помойте лоток у кошечки\",\r\n        \"Comment\":\"Лоток под кроватью\",\r\n        \"Filepath\":\"\",\r\n        \"DelTime\":\"\"\r\n    }]\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "look_account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/look_account",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"look_account"
+					]
+				},
+				"description": "Функция для просмотра своего аккаунта. Возвращает объект Person.\r\n```json\r\n{   \r\n\t\"status\": \"success\",\r\n    \"content\": \r\n    [{\r\n        \"_id\":{\"$numberInt\":\"1\"},\r\n        \"Token\":\"YmL20qmlEOvrJjRD\",\r\n        \"DateOfIssueToken\":{\"$date\":{\"$numberLong\":\"1618076789529\"}},\r\n        \"State\":{\"$numberInt\":\"1\"},\r\n        \"Login\":\"1\",\r\n        \"Password\":\"1\",\r\n        \"Name\":\"Tochilova Elizaveta\",\r\n        \"Phone\":\"89500768814\",\r\n        \"Email\":\"tochilova.1999@mail.ru\",\r\n        \"Birthday\":\"1999-10-11\",\r\n        \"Address\":\"Pervomaiskii, 6\"}]\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "look_account_worker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/look_account_worker",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"look_account_worker"
+					]
+				},
+				"description": "Функция для просмотра аккаунта работника. Возращает объект Person.\r\n```json\r\n{   \r\n\t\"status\": \"success\",\r\n    \"content\": \r\n    [{\r\n        \"_id\":{\"$numberInt\":\"2\"},\r\n        \"Token\":\"YmL20qmlEOvrJjRD\",\r\n        \"DateOfIssueToken\":{\"$date\":{\"$numberLong\":\"1618076789529\"}},\r\n        \"State\":{\"$numberInt\":\"0\"},\r\n        \"Login\":\"2\",\r\n        \"Password\":\"2\",\r\n        \"Name\":\"Yurkov Georgii\",\r\n        \"Phone\":\"88005553535\",\r\n        \"Email\":\"yurkov_georgii@gmail.com\",\r\n        \"Birthday\":\"1997-10-20\",\r\n        \"Address\":\"Sinyska, 7a\"}]\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "read_orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/read_orders",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"read_orders"
+					]
+				},
+				"description": "Функция для получения всех заказов. Возвращает список объектов Order.\r\n\r\n```json\r\n{   \r\n\t\"status\": \"success\",\r\n    \"content\": \r\n    [{\r\n        \"_id\":{\"$numberInt\":\"1\"},\r\n        \"Status\":\"В обработке\",\r\n        \"DateStart\":{\"$date\":{\"$numberLong\":\"1546300800000\"}},\r\n        \"DateEnd\":{\"$date\":{\"$numberLong\":\"1547078400000\"}},\r\n        \"ClientID\":{\"$numberInt\":\"1\"},\r\n        \"AnimalID\":{\"$numberInt\":\"1\"},\r\n        \"DeliveryToTheHotel\":\"0\",\r\n        \"FromDeliveryAddress\":\"\",\r\n        \"FromDeliveryTime\":\"\",\r\n        \"DeliveryFromHotel\":\"0\",\r\n        \"ToDeliveryAddress\":\"\",\r\n        \"ToDeliveryTime\":\"\",\r\n        \"Comment\":\"e\",\r\n        \"DelTime\":null,\r\n        \"Price\":{\"$numberInt\":\"5000\"}\r\n    }]\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "read_messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/read_messages",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"read_messages"
+					]
+				},
+				"description": "Функуция для просмотра сообщений. Возвращает список объектов ChatMessage.\r\n```json\r\n{\r\n    \"status\": \"success\",\r\n    \"content\":\r\n    [{\r\n        \"_id\":{\"$numberInt\":\"1\"},\r\n        \"Chat\":\r\n        {\r\n            \"_id\":{\"$numberInt\":\"1\"},\r\n            \"DelTime\":null,\r\n            \"ClientID\":{\"$numberInt\":\"1\"}\r\n        },\r\n        \"PersonID\":{\"$numberInt\":\"1\"},\r\n        \"Time\":{\"$date\":{\"$numberLong\":\"1618006291008\"}},\r\n        \"Text\":\"Привет!\",\r\n        \"FilePath\":\"\",\r\n        \"DelTime\":null,\r\n        \"Status\":{\"$numberInt\":\"1\"}\r\n    }]\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "add_animal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/add_animal",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add_animal"
+					]
+				},
+				"description": "Функция добавления животного. Возвращает уведомление об успешном добавлении животного.\r\n\r\n```json\r\n{ \"status\": \"success\",\r\n  \"content\": \"Животное успешно добавлено!\"\r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Token",
+							"value": "SxZMx3k0oYuNRXMj",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"logout"
+					]
+				},
+				"description": "Функция выхода из профиля пользователя. Возвращает уведомление об успешном выходе из профиля.\r\n```json\r\n{ \"status\": \"success\",\r\n  \"content\": \"Выход был произведен успешно!\" \r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "add_person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/add_person",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add_person"
+					]
+				},
+				"description": "Функция регистрации нового пользователя. Возвращает уведомление об успешной регистрации пользователя.\r\n```json\r\n{ \"status\": \"success\",\r\n  \"content\": \"Пользователь успешно зарегистрирован!\" \r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "add_order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/add_order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add_order"
+					]
+				},
+				"description": "Функция добавления нового заказа. Возвращает уведомление об успешном добавлении заказа.\r\n```json\r\n{ \"status\": \"success\",\r\n  \"content\": \"Заказ успешно добавлен!\" \r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "add_review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/add_review",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add_review"
+					]
+				},
+				"description": "Функция добавления нового отзыва. Возвращает уведомление об успешном добавлении отзыва.\r\n```json\r\n{ \"status\": \"success\",\r\n  \"content\": \"Отзыв успешно добавлен!\" \r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "add_message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/add_message",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add_message"
+					]
+				},
+				"description": "Функция добавления нового сообщения. Возвращает уведомление об успешной отправке сообщения.\r\n```json\r\n{ \"status\": \"success\",\r\n  \"content\": \"Сообщение успешно отправлено!\" \r\n}\r\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "changepass",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/changepass",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"changepass"
+					]
+				},
+				"description": "Функция смены пароля. Возвращает уведомление об успешной смене пароля.\r\n```json\r\n{ \"status\": \"success\",\r\n  \"content\": \"Ваш пароль был успешно изменён!\" \r\n}\r\n```"
+			},
+			"response": []
+		}
+	]
+}
